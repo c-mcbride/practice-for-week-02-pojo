@@ -12,7 +12,19 @@ console.log(stringConverter("raccoon")); // => {r: 1, a: 1, c: 2, o: 2, n: 1}
 ***********************************************************************/
 
 function stringConverter(string) {
-  // Your code here
+  let stringArray = string.split('')
+  let stringObject = {};
+
+  for(let key of stringArray){
+    if(stringObject.hasOwnProperty(key)){
+      stringObject[key] += 1;
+    }
+    else{
+      stringObject[key] = 1;
+    }
+  }
+
+  return stringObject;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

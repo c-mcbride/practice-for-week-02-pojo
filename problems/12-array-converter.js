@@ -10,10 +10,18 @@ console.log(arrayConverter(["apple", "apple"])); // => {apple: 2}
 console.log(arrayConverter(["mango", "pineapple"])); // => {mango: 1, pineapple: 1}
 console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {apple: 1, banana: 2, potato: 1}
 ***********************************************************************/
-
 function arrayConverter(array) {
-  // Your code here
-}
+  let arrayObject = {};
 
+  for(let key of array){
+      if(arrayObject.hasOwnProperty(key)){
+          arrayObject[key] += 1;
+      }
+      else{
+          arrayObject[key] = 1;
+      }
+  }
+  return arrayObject;
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = arrayConverter;

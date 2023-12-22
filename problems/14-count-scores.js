@@ -27,8 +27,22 @@ let peeps = [
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 
-function countScores(people) {
-  // Your code here
+function countScores(people){
+  let scoreTally = {};
+
+  for(let person of people){
+      let name = person.name;
+      let score = person.score;
+
+      if(scoreTally.hasOwnProperty(name)){
+          scoreTally[name] += score;
+      }
+      else{
+          scoreTally[name] = score;
+      }
+  }
+
+  return scoreTally;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -1,8 +1,4 @@
 /***********************************************************************
-Write a function `keyInObjectArray(objArray, keyString)` that takes in an array of 
-objects as the first parameter and a string as the second. The `keyInObjectArray` 
-will return `true` if any of the objects contains the `keyString` as a key within them, and 
-`false` if not.
 
 
 Examples:
@@ -20,7 +16,13 @@ keyInObjectArray(objArray, 'animal'); // => false
 ***********************************************************************/
 
 function keyInObjectArray(objArray, keyString) {
-  // Your code here
+  for(let obj of objArray){
+    if(obj.hasOwnProperty(keyString)){
+      return true;
+    }
+  }
+
+  return false;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
